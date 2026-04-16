@@ -26,6 +26,9 @@ COPY . .
 # 设置时区为上海（个人习惯，方便查看日志时间）
 ENV TZ=Asia/Shanghai
 
+# 关闭 Python 字节码缓存，避免 __pycache__ 污染挂载目录
+ENV PYTHONDONTWRITEBYTECODE=1
+
 EXPOSE 3000 5001
 
 # 同时启动前后端（开发模式）
