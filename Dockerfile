@@ -29,6 +29,9 @@ ENV TZ=Asia/Shanghai
 # 关闭 Python 字节码缓存，避免 __pycache__ 污染挂载目录
 ENV PYTHONDONTWRITEBYTECODE=1
 
+# 让 Python 日志直接输出到终端，不经过缓冲（方便 docker logs 实时查看）
+ENV PYTHONUNBUFFERED=1
+
 EXPOSE 3000 5001
 
 # 同时启动前后端（开发模式）
