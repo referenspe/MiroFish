@@ -23,6 +23,9 @@ RUN npm ci \
 # 复制项目源码
 COPY . .
 
+# 设置时区为上海（个人习惯，方便查看日志时间）
+ENV TZ=Asia/Shanghai
+
 EXPOSE 3000 5001
 
 # 同时启动前后端（开发模式）
